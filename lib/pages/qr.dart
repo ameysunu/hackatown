@@ -42,7 +42,6 @@ class _QRState extends State<QR> {
         backgroundColor: Colors.black,
         appBar: AppBar(
             backgroundColor: Colors.black,
-            automaticallyImplyLeading: false,
             title: const Text(
               'QR Scan',
               style:
