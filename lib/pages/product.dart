@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackatown/pages/qr.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Product extends StatefulWidget {
@@ -71,7 +72,13 @@ class _ProductState extends State<Product> {
                     borderRadius: BorderRadius.circular(10.0),
                   ),
                   onPressed: () {
-                    null;
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return QR();
+                        },
+                      ),
+                    );
                   },
                 ),
               ),
