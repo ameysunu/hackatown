@@ -51,6 +51,9 @@ class _HomeState extends State<Home> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Container(
+              height: MediaQuery.of(context).size.height * 0.05,
+            ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
@@ -171,6 +174,13 @@ class _HomeState extends State<Home> {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: HexColor('#6A548B'),
+        child: Icon(Icons.chat),
+        onPressed: () {
+          null;
+        },
       ),
     );
   }
