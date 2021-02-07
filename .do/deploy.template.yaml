@@ -1,0 +1,9 @@
+spec:
+  name: hackatown
+  services:
+  - dockerfile_path: Dockerfile
+    git:
+      branch: master
+      repo_clone_url: https://github.com/ameysunu/hackatown.git
+    name: greentown-dockerfile
+    http_port: 80
