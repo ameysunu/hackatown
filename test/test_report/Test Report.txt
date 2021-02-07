@@ -1,0 +1,11 @@
+Flutter Counter Increment Smoke Test
+------------------------------------
+
+app_name: hackatown
+repo: /ameysunu/hackatown
+tester: widget-tester
+
+------------------------------------
+
+Smoke Test Successfully Compiled!
+Compiled APK link: https://drive.google.com/folderview?id=16b6BgwR5uL6Wu3I0DmxWHBeswNQ_U5XQ
