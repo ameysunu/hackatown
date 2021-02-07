@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:share/share.dart';
 
 class Recycle extends StatefulWidget {
   @override
@@ -42,6 +42,18 @@ class _RecycleState extends State<Recycle> {
           "Recycle Bins",
           style: TextStyle(fontFamily: 'Roboto Medium'),
         ),
+        actions: [
+          IconButton(
+              icon: Icon(
+                Icons.share,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                Share.share(
+                    'Hey, come help me trash this garbage and earn points!',
+                    subject: 'GreenTown');
+              })
+        ],
       ),
       body: GoogleMap(
         mapType: _currentMapType,
