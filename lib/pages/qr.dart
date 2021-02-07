@@ -1,9 +1,15 @@
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:intl/intl.dart';
+
+final firestoreInstance = FirebaseFirestore.instance;
+DateTime now = DateTime.now();
+String newDate = DateFormat('EEE d MMM, kk:mm').format(now);
 
 class QR extends StatefulWidget {
   @override
@@ -119,8 +125,16 @@ class _QRState extends State<QR> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
-                  onPressed: () {
-                    null;
+                  onPressed: () async {
+                    firestoreInstance
+                        .collection('saved')
+                        .doc(
+                            '${now.hour.toString()}${now.minute.toString()}${now.second.toString()}')
+                        .set({
+                      "title": _scanBarcode,
+                    }).then((_) {
+                      print("success!");
+                    });
                   },
                 ),
               ),

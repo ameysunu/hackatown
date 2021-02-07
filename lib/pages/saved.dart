@@ -11,8 +11,17 @@ class _SavedState extends State<Saved> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
+        title: Text(
+          "Saved Trash",
+          style: TextStyle(fontFamily: 'Roboto Medium'),
+        ),
       ),
       backgroundColor: Colors.black,
+      body: Container(
+        child: Column(
+          children: [],
+        ),
+      ),
     );
   }
 }

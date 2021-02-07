@@ -5,6 +5,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_ml_vision/firebase_ml_vision.dart';
 
+import 'qr.dart';
+
 AsyncSnapshot<DocumentSnapshot> snapshot;
 Stream<QuerySnapshot> newStream;
 
@@ -135,21 +137,18 @@ class _SerialState extends State<Serial> {
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   onPressed: () async {
-                    null;
-                    // firestoreInstance
-                    //     .collection('flyers')
-                    //     .doc(
-                    //         '${now.hour.toString()}${now.minute.toString()}${now.second.toString()}')
-                    //     .set({
-                    //   "flyer": text,
-                    //   "id":
-                    //       '${now.hour.toString()}${now.minute.toString()}${now.second.toString()}',
-                    // }).then((_) {
-                    //   print("success!");
-                    // });
-                    // setState(() {
-                    //   text = "";
-                    // });
+                    firestoreInstance
+                        .collection('saved')
+                        .doc(
+                            '${now.hour.toString()}${now.minute.toString()}${now.second.toString()}')
+                        .set({
+                      "title": text,
+                    }).then((_) {
+                      print("success!");
+                    });
+                    setState(() {
+                      text = "";
+                    });
                   },
                   color: HexColor('#FF967B'),
                   textColor: HexColor('#FFFFFF'),
