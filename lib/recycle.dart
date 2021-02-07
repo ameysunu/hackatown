@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Recycle extends StatefulWidget {
   @override
@@ -73,6 +74,20 @@ class _RecycleState extends State<Recycle> {
                   title: 'Trash Can',
                 ),
                 icon: pinLocationIcon));
+          });
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        child: Icon(
+          Icons.map,
+          color: Colors.white,
+        ),
+        onPressed: () {
+          setState(() {
+            _currentMapType = _currentMapType == MapType.normal
+                ? MapType.satellite
+                : MapType.normal;
           });
         },
       ),
