@@ -50,7 +50,7 @@ class _RecycleState extends State<Recycle> {
               ),
               onPressed: () {
                 Share.share(
-                    'Hey, come help me trash this garbage and earn points!',
+                    'Hey, come help me trash this garbage and earn points!, Download GreenTown from here: https://drive.google.com/drive/u/0/folders/16b6BgwR5uL6Wu3I0DmxWHBeswNQ_U5XQ',
                     subject: 'GreenTown');
               })
         ],

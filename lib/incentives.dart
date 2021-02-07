@@ -57,32 +57,38 @@ class _IncentiveState extends State<Incentive> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: HexColor('#A04E8A')),
-                          child: Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "McDonald's",
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto Medium',
-                                      color: Colors.white,
-                                      fontSize: 20),
-                                ),
-                                Text(
-                                  "120",
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto Medium',
-                                      color: Colors.white,
-                                      fontSize: 20),
-                                ),
-                              ],
+                      InkWell(
+                        onTap: () {
+                          _popup(context);
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                color: HexColor('#A04E8A')),
+                            child: Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "McDonald's",
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto Medium',
+                                        color: Colors.white,
+                                        fontSize: 20),
+                                  ),
+                                  Text(
+                                    "120",
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto Medium',
+                                        color: Colors.white,
+                                        fontSize: 20),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -187,4 +193,24 @@ class _IncentiveState extends State<Incentive> {
       ),
     );
   }
+}
+
+void _popup(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          content: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: HexColor('#FFFFFF'),
+            ),
+            height: MediaQuery.of(context).size.height * 0.25,
+            child: Container(
+              child: Image.asset('images/qrdummy.PNG'),
+            ),
+          ),
+          contentPadding: EdgeInsets.all(0.0),
+        );
+      });
 }
