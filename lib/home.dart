@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hackatown/incentives.dart';
 import 'package:hackatown/login.dart';
 import 'package:hackatown/pages/product.dart';
 import 'package:hackatown/recycle.dart';
@@ -145,7 +146,13 @@ class _HomeState extends State<Home> {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 onPressed: () {
-                  null;
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return Incentive();
+                      },
+                    ),
+                  );
                 },
               ),
             ),
