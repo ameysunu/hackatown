@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackatown/incentives.dart';
 import 'package:hackatown/login.dart';
+import 'package:hackatown/pages/chatbot.dart';
 import 'package:hackatown/pages/product.dart';
 import 'package:hackatown/pages/saved.dart';
 import 'package:hackatown/recycle.dart';
@@ -179,7 +180,13 @@ class _HomeState extends State<Home> {
         backgroundColor: HexColor('#6A548B'),
         child: Icon(Icons.chat),
         onPressed: () {
-          null;
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return Chat();
+              },
+            ),
+          );
         },
       ),
     );
