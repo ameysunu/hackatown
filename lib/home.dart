@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hackatown/incentives.dart';
 import 'package:hackatown/login.dart';
 import 'package:hackatown/pages/product.dart';
+import 'package:hackatown/pages/saved.dart';
 import 'package:hackatown/recycle.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -23,6 +25,17 @@ class _HomeState extends State<Home> {
         ),
         actions: [
           IconButton(
+              icon: Icon(CupertinoIcons.arrow_up_bin),
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Saved();
+                    },
+                  ),
+                );
+              }),
+          IconButton(
               icon: Icon(Icons.logout),
               onPressed: () {
                 signOutGoogle();
@@ -30,7 +43,7 @@ class _HomeState extends State<Home> {
                     MaterialPageRoute(builder: (context) {
                   return Login();
                 }), ModalRoute.withName('/'));
-              })
+              }),
         ],
       ),
       backgroundColor: Colors.black,
