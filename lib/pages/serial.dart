@@ -132,8 +132,8 @@ class _SerialState extends State<Serial> {
                 height: 50,
                 child: RaisedButton(
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                      side: BorderSide(color: HexColor('#FFFFFF'))),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                   onPressed: () async {
                     null;
                     // firestoreInstance
